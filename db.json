@@ -1,0 +1,99 @@
+{
+  "students": [
+    {
+      "rollNo": "1ME17CS011",
+      "firstName": "Ankit",
+      "lastName": "Mishra",
+      "branch": "CSE",
+      "semester": 3,
+      "dob": "2022-02-28T18:30:00.000Z",
+      "id": 1
+    },
+    {
+      "rollNo": "1ME17ME011",
+      "firstName": "Amit",
+      "lastName": "Mukherjee",
+      "branch": "ME",
+      "semester": 2,
+      "dob": "2022-03-16T18:30:00.000Z",
+      "id": 2
+    },
+    {
+      "rollNo": "1ME17EE013",
+      "firstName": "Abhik",
+      "lastName": "Kumar",
+      "branch": "EEE",
+      "semester": 2,
+      "dob": "2022-03-10T18:30:00.000Z",
+      "id": 3
+    },
+    {
+      "rollNo": "1ME17ME019",
+      "firstName": "Priya",
+      "lastName": "Kumari",
+      "branch": "ME",
+      "semester": 4,
+      "dob": "2022-02-28T18:30:00.000Z",
+      "id": 4
+    },
+    {
+      "rollNo": "1ME17CS008",
+      "firstName": "Aman",
+      "lastName": "Singh",
+      "branch": "CSE",
+      "semester": 4,
+      "dob": "2022-03-10T18:30:00.000Z",
+      "id": 5
+    },
+    {
+      "rollNo": "1ME17EC009",
+      "firstName": "Shilpa",
+      "lastName": "Kumari",
+      "branch": "ECE",
+      "semester": 3,
+      "dob": "2022-02-28T18:30:00.000Z",
+      "id": 7
+    },
+    {
+      "rollNo": "1ME17CV007",
+      "firstName": "Suman",
+      "lastName": "Ghosh",
+      "branch": "CV",
+      "semester": 6,
+      "dob": "2022-03-09T18:30:00.000Z",
+      "id": 8
+    },
+    {
+      "rollNo": "1ME19ME011",
+      "firstName": "Tez",
+      "lastName": "Pratap",
+      "branch": "ME",
+      "semester": 6,
+      "dob": "2022-03-24T18:30:00.000Z",
+      "id": 9
+    },
+    {
+      "rollNo": "1MW32EC222",
+      "firstName": "Shruti",
+      "lastName": "Srivastava",
+      "branch": "ECE",
+      "semester": 5,
+      "dob": "2022-04-14T18:30:00.000Z",
+      "id": 11
+    }
+  ],
+  "users": [
+    {
+      "firstName": "Ankit",
+      "lastName": "Mishra",
+      "contactNo": "6201397442",
+      "email": "ankit@gmail.com",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "id": 2
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

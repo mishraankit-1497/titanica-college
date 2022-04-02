@@ -1,0 +1,122 @@
+<div
+  class="container d-flex justify-content-center align-items-center"
+  style="height: 90vh; flex-direction: column"
+>
+  <mat-card
+    class="example-card"
+    style="width: 400px; max-width: 400px; margin-top: 60px"
+  >
+    <div>
+      <div class="display-6 mb-3 text-center">Sign Up</div>
+    </div>
+    <form [formGroup]="signUpForm">
+      <mat-card-content class="card-style">
+        <mat-form-field appearance="outline">
+          <mat-label>First Name</mat-label>
+          <input
+            formControlName="firstName"
+            matInput
+            (ngModelChange)="onFirstNameChange()"
+            placeholder="First Name"
+          />
+          <mat-icon matSuffix *ngIf="!firstName"
+            >sentiment_very_satisfied</mat-icon
+          >
+          <mat-hint *ngIf="firstName">
+            <small style="color: red">{{ firstName }}</small>
+          </mat-hint>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Last Name</mat-label>
+          <input
+            (ngModelChange)="onLastNameChange()"
+            formControlName="lastName"
+            matInput
+            placeholder="Last Name"
+          />
+          <mat-icon matSuffix *ngIf="!lastName"
+            >sentiment_very_satisfied</mat-icon
+          >
+          <mat-hint *ngIf="lastName">
+            <small style="color: red">{{ lastName }}</small>
+          </mat-hint>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Contact Number</mat-label>
+          <input
+            formControlName="contactNo"
+            (ngModelChange)="onContactChange()"
+            type="tel"
+            matInput
+            placeholder="Contact Number"
+          />
+          <mat-icon matSuffix *ngIf="!contact"
+            >sentiment_very_satisfied</mat-icon
+          >
+          <mat-hint *ngIf="contact">
+            <small style="color: red">{{ contact }}</small>
+          </mat-hint>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Email address</mat-label>
+          <input
+            (ngModelChange)="onEmailChange()"
+            type="email"
+            formControlName="email"
+            matInput
+            placeholder="Email Address"
+          />
+          <mat-icon matSuffix *ngIf="!email">sentiment_very_satisfied</mat-icon>
+          <mat-hint *ngIf="email">
+            <small style="color: red">{{ email }}</small>
+          </mat-hint>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input
+            (ngModelChange)="onPasswordChange()"
+            formControlName="password"
+            type="password"
+            matInput
+            placeholder="Password"
+          />
+          <mat-icon matSuffix *ngIf="!password"
+            >sentiment_very_satisfied</mat-icon
+          >
+          <mat-hint *ngIf="password">
+            <small style="color: red">{{ password }}</small>
+          </mat-hint>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Confirm Password</mat-label>
+          <input
+            formControlName="confirmPassword"
+            type="password"
+            (ngModelChange)="onConfirmPasswordChange()"
+            matInput
+            placeholder="Confirm Password"
+          />
+          <mat-icon matSuffix *ngIf="!confirmPassword"
+            >sentiment_very_satisfied</mat-icon
+          >
+          <mat-hint *ngIf="confirmPassword">
+            <small style="color: red">{{ confirmPassword }}</small>
+          </mat-hint>
+        </mat-form-field>
+      </mat-card-content>
+    </form>
+    <mat-card-actions style="margin-left: 3px">
+      <button
+        mat-raised-button
+        color="primary"
+        [disabled]="disabled"
+        (click)="signUp()"
+      >
+        Sign Up
+      </button>
+      <p class="mt-3">
+        Have an account? Click to <a routerLink="/login">Login</a>
+      </p>
+    </mat-card-actions>
+  </mat-card>
+</div>

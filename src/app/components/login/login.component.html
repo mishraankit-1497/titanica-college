@@ -1,0 +1,40 @@
+<div
+  class="container d-flex justify-content-center align-items-center"
+  style="height: 90vh; padding: 5px"
+>
+  <mat-card class="example-card">
+    <div>
+      <div class="display-6 mb-3 text-center">Login</div>
+    </div>
+    <form [formGroup]="loginForm">
+      <mat-card-content>
+        <mat-form-field appearance="outline">
+          <mat-label>Email address</mat-label>
+          <input
+            type="email"
+            formControlName="email"
+            matInput
+            placeholder="Email Address"
+          />
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input
+            formControlName="password"
+            type="password"
+            matInput
+            placeholder="Password"
+          />
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+      </mat-card-content>
+    </form>
+    <mat-card-actions style="margin-left: 3px">
+      <button mat-raised-button color="primary" (click)="login()">Login</button>
+      <p class="mt-3">
+        Don't have an account? <a routerLink="/signup">Create an account</a>
+      </p>
+    </mat-card-actions>
+  </mat-card>
+</div>

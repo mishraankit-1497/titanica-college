@@ -1,0 +1,139 @@
+<div style="width: 100%; height: 100%; background-color: rgb(250, 250, 250)">
+  <mat-toolbar>
+    <span title="Titanica College" style="cursor: pointer"
+      >Titanica College</span
+    >
+    <span class="example-spacer"></span>
+    <button
+      style="margin-right: 20px"
+      mat-raised-button
+      color="primary"
+      (click)="openDialog()"
+    >
+      Add Student
+    </button>
+    <mat-icon
+      style="margin-right: 20px; cursor: pointer"
+      title="Logout"
+      (click)="logOut()"
+      >logout
+    </mat-icon>
+  </mat-toolbar>
+
+  <div class="container mt-5">
+    <div style="display: flex; align-items: center; justify-content: flex-end">
+      <div class="h3 mb-3" style="margin-right: 10px">List of students</div>
+      <div style="margin-bottom: 10px; margin-right: 6px">
+        <mat-icon>search</mat-icon>
+      </div>
+      <form [formGroup]="searchForm">
+        <mat-form-field appearance="outline" style="margin-right: 20px">
+          <mat-label>Search name</mat-label>
+          <input
+            type="search"
+            matInput
+            formControlName="search"
+            placeholder="Search"
+            (ngModelChange)="onSubmit($event)"
+          />
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="margin-right: 20px">
+          <mat-label>Search roll number</mat-label>
+          <input
+            type="search"
+            matInput
+            formControlName="searchRollNumber"
+            placeholder="Search"
+            (ngModelChange)="onSubmit($event)"
+          />
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="margin-right: 20px">
+          <mat-label>Search branch</mat-label>
+          <input
+            type="search"
+            matInput
+            formControlName="searchBranch"
+            placeholder="Search"
+            (ngModelChange)="onSubmit($event)"
+          />
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Search semester</mat-label>
+          <input
+            type="search"
+            matInput
+            formControlName="searchSemester"
+            placeholder="Search"
+            (ngModelChange)="onSubmit($event)"
+          />
+        </mat-form-field>
+      </form>
+    </div>
+    <div
+      class="container table-style1"
+      *ngIf="studentList.length !== 0; else noRecord"
+    >
+      <table
+        matSort
+        (matSortChange)="sortData($event)"
+        class="table table-bordered table-striped table-hover table-responsive text-center"
+      >
+        <thead>
+          <tr>
+            <th mat-sort-header="rollno">Roll No.</th>
+            <th mat-sort-header="name">Name</th>
+            <th mat-sort-header="branch">Branch</th>
+            <th mat-sort-header="semester">Semester</th>
+            <th mat-sort-header="dob">Date of Birth</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="
+              let s of studentList
+                | paginate: { itemsPerPage: 5, currentPage: p }
+            "
+          >
+            <td>{{ s.rollNo }}</td>
+            <td>{{ s.firstName }}&nbsp;{{ s.lastName }}</td>
+            <td>{{ s.branch }}</td>
+            <td>{{ s.semester }}</td>
+            <td>{{ s.dob | date: "dd/MM/yyyy" }}</td>
+            <td
+              style="
+                cursor: pointer;
+                display: flex;
+                justify-content: space-around;
+              "
+            >
+              <mat-icon
+                color="primary"
+                matSuffix
+                (click)="openEditDialog(s)"
+                title="Edit"
+                >edit</mat-icon
+              >
+              <mat-icon
+                matSuffix
+                color="warn"
+                (click)="deleteStudent(s.id)"
+                title="Remove"
+                >delete</mat-icon
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div *ngIf="studentList.length !== 0">
+    <pagination-controls
+      style="display: flex; justify-content: flex-end; margin-right: 80px"
+      (pageChange)="p = $event"
+    ></pagination-controls>
+  </div>
+  <ng-template #noRecord style="text-align: center">
+    <div class="h4 text-center">No records found</div>
+  </ng-template>
+</div>
